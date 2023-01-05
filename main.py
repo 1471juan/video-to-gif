@@ -9,7 +9,7 @@ import os
 def img_clean(frame_initial, frame_final):
     frame_current = frame_initial
     while(frame_current <= frame_final):
-        name = 'data/img/' + str(frame_current) + '.jpg'
+        name = 'data/' + str(frame_current) + '.jpg'
         if os.path.exists(name):
             os.remove(name)
         frame_current+=1 
@@ -29,7 +29,7 @@ def create_gif(media_name, frame_initial, frame_final):
         ret, frame = media_video.read()
 
         if ret:
-            name = 'data/img/' + str(frame_current) + '.jpg'
+            name = 'data/' + str(frame_current) + '.jpg'
             cv2.imwrite(name, frame)
             im=Image.open(name)
             images.append(im)
